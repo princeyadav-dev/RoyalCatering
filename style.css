@@ -557,3 +557,11 @@ img {
     position: relative;
     z-index: 1;
 }
+
+.total-box {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #d4af37;
+}

@@ -48,3 +48,34 @@ emailBtn.addEventListener("click", (e) => {
     const mail = `mailto:info@royalcatering.com?subject=Menu Order&body=${encodeURIComponent(message)}`;
     window.location.href = mail;
 });
+
+const totalPriceEl = document.getElementById("total-price");
+
+function calculateTotal() {
+    let total = 0;
+
+    document.querySelectorAll(".menu-item").forEach(item => {
+        const checkbox = item.querySelector(".dish-checkbox");
+        const qtyInput = item.querySelector(".dish-qty");
+
+        if (checkbox.checked) {
+            const price = parseFloat(
+                checkbox.dataset.price.replace("$", "")
+            );
+            const qty = parseInt(qtyInput.value) || 1;
+
+            total += price * qty;
+        }
+    });
+
+    totalPriceEl.textContent = "$" + total.toFixed(2);
+}
+
+/* EVENTS */
+document.querySelectorAll(".dish-checkbox").forEach(cb => {
+    cb.addEventListener("change", calculateTotal);
+});
+
+document.querySelectorAll(".dish-qty").forEach(qty => {
+    qty.addEventListener("input", calculateTotal);
+});
