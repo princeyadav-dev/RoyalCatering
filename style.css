@@ -472,3 +472,88 @@ img {
         text-align: center;
     }
 }
+
+/* =========================
+   QUANTITY SELECTOR
+========================= */
+.qty-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.qty-box label {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.dish-qty {
+    width: 60px;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #d4af37;
+    background: #0f0f0f;
+    color: #fff;
+    text-align: center;
+}
+
+/* Checkbox positioning */
+.menu-select {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.dish-checkbox {
+    transform: scale(1.3);
+    cursor: pointer;
+}
+/* Ensure menu item positioning */
+.menu-item {
+    position: relative;
+}
+
+/* Checkbox container */
+.menu-select {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 5;              /* 🔥 THIS FIXES IT */
+    background: rgba(0,0,0,0.6);
+    padding: 6px 8px;
+    border-radius: 6px;
+}
+
+/* Checkbox itself */
+.dish-checkbox {
+    transform: scale(1.4);
+    cursor: pointer;
+}
+/* Quantity input FIX */
+.dish-qty {
+    width: 70px;
+    padding: 6px 8px;
+    border-radius: 10px;
+    border: 1px solid #d4af37;
+    background: #0f0f0f;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+
+    position: relative;
+    z-index: 10;          /* 🔥 MOST IMPORTANT */
+    pointer-events: auto;/* 🔥 FORCE CLICK */
+}
+.qty-box {
+    position: relative;
+    z-index: 10;
+}
+
+.menu-item {
+    overflow: visible; /* 🔥 VERY IMPORTANT */
+}
+.menu-item img {
+    position: relative;
+    z-index: 1;
+}

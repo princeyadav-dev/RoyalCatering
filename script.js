@@ -1,75 +1,50 @@
-// ================================
-// MENU CHECKLIST → WHATSAPP / EMAIL
-// ================================
+const whatsappBtn = document.getElementById("whatsapp-send");
+const emailBtn = document.getElementById("email-send");
 
-document.addEventListener("DOMContentLoaded", () => {
+function getSelectedDishesMessage() {
+    const items = document.querySelectorAll(".menu-item");
+    let message = "Hi! I would like to order:\n\n";
+    let hasSelection = false;
 
-    const whatsappBtn = document.getElementById("whatsapp-send");
-    const emailBtn = document.getElementById("email-send");
+    items.forEach(item => {
+        const checkbox = item.querySelector(".dish-checkbox");
+        const qtyInput = item.querySelector(".dish-qty");
 
-    // 🔹 Apna WhatsApp number (country code ke saath)
-    const WHATSAPP_NUMBER = "919958792286"; // 91 + number
+        if (checkbox.checked) {
+            hasSelection = true;
+            const name = checkbox.dataset.name;
+            const price = checkbox.dataset.price;
+            const qty = qtyInput.value;
 
-    function getSelectedDishesMessage() {
-        const selected = document.querySelectorAll(".dish-checkbox:checked");
-
-        if (selected.length === 0) {
-            alert("Please select at least one dish!");
-            return null;
+            message += `• ${name}\n  Qty: ${qty}\n  Price: ${price}\n\n`;
         }
+    });
 
-        let message = "Hi! I would like to order the following dishes:\n\n";
-
-        selected.forEach((dish, index) => {
-            const name = dish.dataset.name;
-            const price = dish.dataset.price;
-            message += `${index + 1}. ${name} (${price})\n`;
-        });
-
-        message += "\nPlease contact me for further details.";
-
-        return message;
+    if (!hasSelection) {
+        alert("Please select at least one dish");
+        return null;
     }
 
-    // ====================
-    // WHATSAPP SEND
-    // ====================
-    whatsappBtn.addEventListener("click", (e) => {
-        e.preventDefault();
+    return message;
+}
 
-        const message = getSelectedDishesMessage();
-        if (!message) return;
+/* WhatsApp */
+whatsappBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const message = getSelectedDishesMessage();
+    if (!message) return;
 
-        const url =
-            `https://wa.me/${WHATSAPP_NUMBER}?text=` +
-            encodeURIComponent(message);
-
-        window.open(url, "_blank");
-    });
-
-    // ====================
-    // EMAIL SEND
-    // ====================
-    emailBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        const message = getSelectedDishesMessage();
-        if (!message) return;
-
-        const subject = "Menu Selection – Royal Catering";
-        const mailto =
-            `mailto:animesansaryt@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-
-        window.location.href = mailto;
-    });
-
+    const phone = "919958792286"; // apna number (country code ke saath)
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
 });
 
-// Footer WhatsApp click
-const footerWhatsApp = document.querySelector('.footer-contact a[href*="wa.me"]');
+/* Email */
+emailBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const message = getSelectedDishesMessage();
+    if (!message) return;
 
-footerWhatsApp.addEventListener('click', (e) => {
-    console.log("User clicked WhatsApp link!");
-    // Optional: alert("Redirecting to WhatsApp...");
+    const mail = `mailto:info@royalcatering.com?subject=Menu Order&body=${encodeURIComponent(message)}`;
+    window.location.href = mail;
 });
-
