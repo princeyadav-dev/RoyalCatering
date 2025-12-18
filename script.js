@@ -64,3 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+// Footer WhatsApp click
+const footerWhatsApp = document.querySelector('.footer-contact a[href*="wa.me"]');
+
+footerWhatsApp.addEventListener('click', (e) => {
+    console.log("User clicked WhatsApp link!");
+    // Optional: alert("Redirecting to WhatsApp...");
+});
+
