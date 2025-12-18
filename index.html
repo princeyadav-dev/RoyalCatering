@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Catering</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <h1>RoyalCatering</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#specials">Specials</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#chefs">Chefs</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero-section">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <h2>Experience Luxury Catering</h2>
+            <p>Premium food, top-notch service, unforgettable events.</p>
+            <a href="#contact" class="btn-primary">Book Now</a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>
+                Royal Catering brings luxury dining experiences to your events.
+                Our professional chefs craft exquisite dishes with premium ingredients.
+            </p>
+            <a href="#menu" class="btn-primary">See Our Menu</a>
+        </div>
+    </div>
+</section>
+<!-- MENU SECTION -->
+<section id="menu" class="menu-section">
+    <div class="container">
+        <h2>Check Our Tasty Menu</h2>
+
+        <!-- MENU ITEMS -->
+        <div class="menu-items">
+
+            <!-- ITEM 1 -->
+            <div class="menu-item">
+                <input type="checkbox" class="dish-checkbox"
+                       data-name="Lobster Bisque"
+                       data-price="$5.95">
+
+                <img src="images/menu/dish1.jpg" alt="Lobster Bisque">
+
+                <h3>Lobster Bisque</h3>
+                <span class="price">$5.95</span>
+                <p>Lorem, deren, trataro, filede, nerada</p>
+            </div>
+
+            <!-- ITEM 2 -->
+            <div class="menu-item">
+                <input type="checkbox" class="dish-checkbox"
+                       data-name="Bread Barrel"
+                       data-price="$6.95">
+
+                <img src="images/menu/dish2.jpg" alt="Bread Barrel">
+
+                <h3>Bread Barrel</h3>
+                <span class="price">$6.95</span>
+                <p>Lorem, deren, trataro, filede, nerada</p>
+            </div>
+
+            <!-- ITEM 3 -->
+            <div class="menu-item">
+                <input type="checkbox" class="dish-checkbox"
+                       data-name="Greek Salad"
+                       data-price="$9.95">
+
+                <img src="images/menu/dish3.jpg" alt="Greek Salad">
+
+                <h3>Greek Salad</h3>
+                <span class="price">$9.95</span>
+                <p>Fresh spinach, crisp romaine, tomatoes, and Greek olives</p>
+            </div>
+
+            <!-- ITEM 4 -->
+            <div class="menu-item">
+                <input type="checkbox" class="dish-checkbox"
+                       data-name="Lobster Roll"
+                       data-price="$12.95">
+
+                <img src="images/menu/dish4.jpg" alt="Lobster Roll">
+
+                <h3>Lobster Roll</h3>
+                <span class="price">$12.95</span>
+                <p>Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll</p>
+            </div>
+
+        </div>
+
+        <!-- SEND BUTTONS (ONLY ONE TIME) -->
+        <div class="contact-buttons">
+            <button id="whatsapp-send" class="btn-primary whatsapp-btn">
+                Send Selected via WhatsApp
+            </button>
+
+            <button id="email-send" class="btn-primary">
+                Send Selected via Email
+            </button>
+        </div>
+
+    </div>
+</section>
+<!-- SPECIALS SECTION -->
+<section id="specials" class="specials-section">
+    <div class="container">
+        <h2>Specials</h2>
+
+        <div class="specials-items">
+            <div class="special-item">
+                <img src="images/menu/special1.jpg" alt="Chef Signature">
+                <h3>Chef’s Signature Pasta</h3>
+                <p>Handmade pasta with creamy truffle sauce.</p>
+            </div>
+
+            <div class="special-item">
+                <img src="images/menu/special2.jpg" alt="Seafood Platter">
+                <h3>Seafood Platter</h3>
+                <p>Fresh catch served with exotic sides.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EVENTS SECTION -->
+<section id="events" class="events-section">
+    <div class="container">
+        <h2>Events</h2>
+        <p>
+            We cater weddings, corporate events, birthdays,
+            and luxury private parties with perfection.
+        </p>
+    </div>
+</section>
+
+<!-- CHEFS SECTION -->
+<section id="chefs" class="chefs-section">
+    <div class="container">
+        <h2>Our Chefs</h2>
+
+        <div class="chefs-items">
+            <div class="chef-item">
+                <img src="images/chefs/chef1.jpg" alt="Chef 1">
+                <h3>Chef John Doe</h3>
+                <p>Executive Chef – 15+ years experience</p>
+            </div>
+
+            <div class="chef-item">
+                <img src="images/chefs/chef2.jpg" alt="Chef 2">
+                <h3>Chef Jane Smith</h3>
+                <p>Luxury Desserts & Gourmet Specialist</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="gallery" class="gallery-section">
+    <div class="container">
+        <h2>Gallery</h2>
+
+        <div class="gallery-items">
+            <img src="images/gallery/photo1.jpg" alt="Gallery 1">
+            <img src="images/gallery/photo2.jpg" alt="Gallery 2">
+            <img src="images/gallery/photo3.jpg" alt="Gallery 3">
+            <img src="images/gallery/photo4.jpg" alt="Gallery 4">
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Get in touch for premium catering & events.</p>
+
+        <!-- SAME BUTTONS WORK FOR MENU CHECKLIST -->
+        <div class="contact-buttons">
+            <button id="whatsapp-send" class="btn-primary whatsapp-btn">
+                Send Selected via WhatsApp
+            </button>
+
+            <button id="email-send" class="btn-primary">
+                Send Selected via Email
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- SCRIPT (ALWAYS AT END) -->
+<script src="script.js"></script>
+
+</body>
+</html>
+

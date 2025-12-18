@@ -1,0 +1,413 @@
+/* =========================
+   GLOBAL RESET & FONTS
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0b0b0b;
+    color: #eaeaea;
+    line-height: 1.6;
+}
+
+/* =========================
+   COMMON CONTAINER
+========================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+header {
+    background: rgba(0,0,0,0.85);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    color: #d4af37;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero-section {
+    height: 100vh;
+    background: url("images/hero/hero-bg.jpg") center/cover no-repeat;
+}
+
+.hero-overlay {
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #d4af37;
+}
+
+.hero-content p {
+    margin: 15px 0 25px;
+    font-size: 18px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary {
+    background: linear-gradient(135deg, #d4af37, #b8962e);
+    color: #000;
+    padding: 12px 28px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212,175,55,0.3);
+}
+
+/* =========================
+   SECTIONS SPACING
+========================= */
+section {
+    padding: 100px 0;
+}
+
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #d4af37;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   COMMON IMAGE RULE
+========================= */
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================
+   MENU SECTION
+========================= */
+.menu-section {
+    background: #0f0f0f;
+    padding: 80px 0;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* CARD */
+.menu-item {
+    background: #151515;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative; /* IMPORTANT */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+/* IMAGE */
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;          /* FACE / FOOD CUT ISSUE FIX */
+    border-radius: 12px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+/* CHECKBOX */
+.dish-checkbox {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;                /* CLICK FIX */
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #d4af37;      /* GOLD CHECK */
+}
+
+/* SELECTED EFFECT */
+.dish-checkbox:checked + img {
+    outline: 3px solid #d4af37;
+    outline-offset: -3px;
+}
+
+/* TEXT */
+.menu-item h3 {
+    font-family: 'Playfair Display', serif;
+    color: #d4af37;
+    margin-bottom: 5px;
+}
+
+.menu-item .price {
+    color: #fff;
+    font-weight: bold;
+}
+
+.menu-item p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+/* =========================
+   CHECKBOX STYLE
+========================= */
+.dish-checkbox {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    accent-color: #d4af37;
+    cursor: pointer;
+}
+
+/* =========================
+   CONTACT BUTTONS
+========================= */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* =========================
+   SPECIALS SECTION
+========================= */
+.specials-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.special-item {
+    background: #151515;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.special-item img {
+    height: 220px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.special-item h3 {
+    color: #d4af37;
+}
+
+/* =========================
+   CHEFS SECTION
+========================= */
+.chefs-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.chef-item {
+    background: #151515;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.chef-item img {
+    height: 260px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   GALLERY SECTION
+========================= */
+.gallery-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.gallery-items img {
+    height: 220px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-items img:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact-section {
+    background: #0f0f0f;
+    text-align: center;
+}
+
+.contact-section p {
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+
+/* ===== SECTION BACKGROUNDS ===== */
+
+.about-section {
+    background: 
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url("images/hero/about-bg.jpg") center/cover no-repeat;
+}
+
+.events-section {
+    background: 
+        linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+        url("images/events/wedding.jpg") center/cover no-repeat;
+}
+
+.contact-section {
+    background: 
+        linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+        url("images/gallery/photo3.jpg") center/cover no-repeat;
+}
+
+.menu-item {
+    background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+    border: 1px solid rgba(212,175,55,0.15);
+}
+
+.menu-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    border: 1px solid rgba(212,175,55,0.25);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.menu-item:hover::after {
+    opacity: 1;
+}
+
+.price {
+    color: #d4af37;
+    font-size: 18px;
+}
+
+.menu-item h3::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #d4af37;
+    margin-top: 6px;
+}
+
+
+.gallery-items img {
+    filter: brightness(0.9);
+}
+
+.gallery-items img:hover {
+    filter: brightness(1.1);
+}
+
+.about-content {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;   /* yahi main fix hai */
+}
+
+.chef-item {
+    text-align: center;
+}
+
+.chef-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center top;   /* face priority */
+    border-radius: 16px;
+}
+
+.dish-checkbox {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
